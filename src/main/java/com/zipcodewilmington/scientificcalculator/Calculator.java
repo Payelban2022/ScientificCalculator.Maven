@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        char Operator;
         double x;
         x = 0;
         System.out.println(0);
@@ -14,33 +15,32 @@ public class Calculator {
         double y;
         y = input.nextDouble();
         System.out.println(y);
-        System.out.println("Enter operator: Addition, Subtraction, Multiplication and Division");
-        String Op = input.next();
-        System.out.println(Op);
-        if ( Op.equals("Addition")) {
-            double n;
-            n = x + y;
+        System.out.println("Enter operator: + , -,*, or /");
+        Operator = input.next().charAt(0);
+        double n;
+        switch (Operator){
+            case '+':
+                n = x + y;
             System.out.println(n);
-        } else if (Op.equals("Subtraction")) {
-            double n;
-            n = x - y;
+            break;
+            case '-':
+                n = x - y;
             System.out.println(n);
-        } else if (Op.equals("Multiplication")) {
-            double n;
-            n = x * y;
-            System.out.println(n);
-        } else if
-        (Op.equals("Division")) {
-            if (y != 0) {
-                double n;
-                n = x / y;
+            break;
+            case '*':
+                n = x * y;
+                System.out.println(n);
+                break;
+            case '/':
+                if (y != 0) {
+                    n = x / y;
                 System.out.println(n);
             } else {
                 System.out.println("Error");
-            }
+            } break;
 
-        }
-            else {System.out.println("This is not a required function.");
+            default:
+                System.out.println("Invalid operator");
 
             }
 
